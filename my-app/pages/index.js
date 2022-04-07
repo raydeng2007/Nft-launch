@@ -241,11 +241,11 @@ export default function Home() {
     const provider = await web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
 
-    // If user is not connected to the ropsten network, let them know and throw an error
+    // If user is not connected to the rinkeby network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
     if (chainId !== 3) {
-      window.alert("Change the network to ropsten");
-      throw new Error("Change network to ropsten");
+      window.alert("Change the network to rinkeby");
+      throw new Error("Change network to rinkeby");
     }
 
     if (needSigner) {
@@ -264,7 +264,7 @@ export default function Home() {
       // Assign the Web3Modal class to the reference object by setting it's `current` value
       // The `current` value is persisted throughout as long as this page is open
       web3ModalRef.current = new Web3Modal({
-        network: "ropsten",
+        network: "rinkeby",
         providerOptions: {},
         disableInjectedProvider: false,
       });
