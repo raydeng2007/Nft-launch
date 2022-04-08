@@ -9,8 +9,18 @@ export default function handler(req, res) {
   // when sending back the response from the api
   // More info can be found here: https://docs.opensea.io/docs/metadata-standards
   res.status(200).json({
-    name: "Crypto Dev #" + tokenId,
-    description: "Crypto Dev is a collection of developers in crypto",
-    image: image_url
+    "attributes": [
+      {
+        "trait_type": "Location",
+        "value": "Dessert"
+      },
+      {
+        "trait_type": "Mood",
+        "value": "Sad boi"
+      }
+    ],
+    "description": "stars in the sky",
+    "image": "https://gateway.pinata.cloud/ipfs/QmdRAAT8kHTVvxxPb4bU3eKft7KuKqK61U68P2CLARJhVU",
+    "name": "ARIZONA"
   });
 }
